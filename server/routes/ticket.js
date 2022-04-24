@@ -13,7 +13,10 @@ ticketRoutes.route("/ticket").get(function (req, res) {
     .collection("tickets")
     .find({})
     .toArray(function (err, result) {
-      if (err) throw err;
+      if (err) {
+        throw err;
+        console.log('Error!!!!!')
+      }
       res.json(result);
     });
 });
